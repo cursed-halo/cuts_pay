@@ -1,5 +1,5 @@
 # The CUTS Project - **Under Construction**
-## Cashless Universal TOken System
+## Cashless Universal TOken System :D
 
 Embrace the cashless lifestyle with the added bonus of offline transactions through a safe and secure NFC based payment system.
 
