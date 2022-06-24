@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <title>CUTS: Sign In</title>
+        <title>CUTS: Register</title>
         <meta content="" name="description">
         <meta content="" name="keywords">
         <!-- Favicons -->
@@ -44,11 +44,11 @@
                     </ul>
                     <i class="bi bi-list mobile-nav-toggle d-none pt-4"></i>
                 </nav><!-- .navbar -->
-                <!--<a class="btn-getstarted scrollto" href="signin.html pt-4">Sign In</a>-->
+                <!--<a class="btn-getstarted scrollto" href="signin.html">Sign In</a>--->
             </div>
         </header><!-- End Header -->
         <div id="content" class="p-4 p-md-5 pt-5">
-            <h2 class="mb-3"></h2>
+            <h2 class="mb-4"></h2>
             <section class="vh-100">
                 <div class="container py-5 h-100">
                     <div class="row d-flex justify-content-center align-items-center h-100">
@@ -61,32 +61,42 @@
                                     </div>
                                     <div class="col-md-6 col-lg-7 d-flex align-items-center">
                                         <div class="card-body p-4 p-lg-5 text-black">
-                                            <form name="myForm" action="/action_page.php"
-                                                onsubmit="return validateForm()" method="post" required>
-                                                <h5 class="fw-normal mb-2 pb-3" style="letter-spacing: 1px;">
-                                                    <h3>Sign into your account</h3>
+                                            <form name="myForm" onsubmit="return validateForm(); checkForm(this)"
+                                                method="post" required>
+                                                <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">
+                                                    <h3>Create an account</h3>
                                                 </h5>
-                                                <div class="form-outline mb-2">
+                                                <div class="form-outline mb-4">
                                                     <input type="text" id="form2Example17"
                                                         class="form-control form-control-lg" name="fname" />
-                                                    <label class="form-label" for="form2Example17">CUTS Id</label>
+                                                    <label class="form-label" for="form2Example17">Name</label>
                                                 </div>
-                                                <div class="form-outline mb-2">
+                                                <div class="form-outline mb-4">
+                                                    <input type="email" id="form2Example17"
+                                                        class="form-control form-control-lg" name="fname" />
+                                                    <label class="form-label" for="form2Example17">Email</label>
+                                                </div>
+                                                <div class="form-outline mb-4">
+                                                    <input type="number" id="form2Example27"
+                                                        class="form-control form-control-lg" name="fname" />
+                                                    <label class="form-label" for="form2Example27">Phone No.</label>
+                                                </div>
+                                                <div class="form-outline mb-4">
                                                     <input type="password" id="form2Example27"
-                                                        class="form-control form-control-lg" name="pwd2" />
+                                                        class="form-control form-control-lg name=" pwd1" />
                                                     <label class="form-label" for="form2Example27">Password</label>
+                                                    <span class="text-muted">
+                                                        <ul>
+                                                            <li><small><em>Must be 8 characters</em></small></li>
+                                                            <li><small><em>Must contain numbers and lowercase
+                                                                        letter</em></small></li>
+                                                        </ul>
+                                                    </span>
                                                 </div>
-                                                <div class="pt-1 mb-2">
-                                                    <button class="btn btn-dark btn-lg btn-block" type="submit">Sign
-                                                        In</button>
+                                                <div class="pt-1 mb-4">
+                                                    <a href="otp.html"> <button class="btn btn-dark btn-lg btn-block"
+                                                            type="submit">Signup</button></a>
                                                 </div>
-                                                <a class="small text-muted" href="#!">Forgot password?</a>
-                                                <p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account?
-                                                    <a href="signup.html" style="color: #39815b;"><b>Register
-                                                            here</b></a>
-                                                </p>
-                                                <a href="terms.html" class="small text-muted">Terms of use.</a>
-                                                <a href="terms.html" class="small text-muted">Privacy policy</a>
                                             </form>
                                         </div>
                                     </div>
@@ -163,8 +173,6 @@
         <!-- Main JS File -->
         <script src="assets/js/main.js"></script>
         <script src="assets/js/user.js"></script>
-        <script src="scripts/auth.js"></script>
-        <script type="module" src="scripts/firebase_connect.js"></script>
     </body>
 
 </html>
