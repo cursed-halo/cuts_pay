@@ -37,9 +37,9 @@ import { collection, addDoc } from "https://www.gstatic.com/firebasejs/9.8.4/fir
   }
 }
 var c=document.getElementById("SubmitLogin");
-c.addEventListener('click',function(){
-  push(5);
-});
+//c.addEventListener('click',function(){
+ // push(5);
+//});
 
 // Initialize Cloud Firestore and get a reference to the service
  function  get_db()
@@ -49,4 +49,4 @@ c.addEventListener('click',function(){
 return db;
 }
 
-export{get_db};
+export{db,app};
