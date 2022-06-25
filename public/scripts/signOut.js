@@ -1,4 +1,5 @@
-import {auth} from "./firebase_auth.js"
+import {auth,provider} from "./firebase_auth.js"
+import { getAuth, signInWithPopup, GoogleAuthProvider,signOut } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-auth.js";
 function signoutSite()
 {
   signOut(auth).then(() => {

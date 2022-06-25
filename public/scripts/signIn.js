@@ -1,4 +1,6 @@
-import {auth} from "./firebase_auth.js"
+import {auth,provider} from "./firebase_auth.js"
+import { getAuth, signInWithPopup, GoogleAuthProvider,signOut } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-auth.js";
+
 function signIn(){
     signInWithPopup(auth, provider)
     .then((result) => {
@@ -24,3 +26,4 @@ function signIn(){
   }
     var c=document.getElementById("googleSignIn");
     c.addEventListener('click',signIn);
+    export{auth};

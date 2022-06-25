@@ -6,5 +6,5 @@ import { getAuth, signInWithPopup, GoogleAuthProvider,signOut } from "https://ww
 
 const auth = getAuth(app);
 
-export{auth};
+export{auth,provider};
 
