@@ -1,3 +1,4 @@
+import {auth} from "./firebase_auth.js"
 function signoutSite()
 {
   signOut(auth).then(() => {
