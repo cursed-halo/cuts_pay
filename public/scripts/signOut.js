@@ -3,7 +3,7 @@ import { getAuth, signInWithPopup, GoogleAuthProvider,signOut } from "https://ww
 function signoutSite()
 {
   signOut(auth).then(() => {
-    alert(user.email);
+    alert("logged out");
   window.location.replace("./signin.html");
 }).catch((error) => {
  alert("error");
