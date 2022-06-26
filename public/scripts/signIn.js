@@ -8,10 +8,10 @@ function signIn(){
       const credential = GoogleAuthProvider.credentialFromResult(result);
       const token = credential.accessToken;
       // The signed-in user info
-      window.location.replace("./recharge.html");
+      window.location.replace("./index.html");
      //window.location = "./recharge.html";
-      const user = result.user;
-      alert("Logged in");
+      const useremail = result.user.email;
+      alert(useremail);
       // ...
     }).catch((error) => {
       // Handle Errors here.
