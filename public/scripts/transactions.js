@@ -31,5 +31,6 @@ querySnapshot.forEach((doc) => {
   var i;
 for( i=0;i<transactionList.length;i++)
 {
-console.log(transactionList[i].Amount);
+
+document.getElementById("transdata").innerHTML=transactionList[i].Amount;
 }
