@@ -4,9 +4,9 @@ import { auth } from "./firebase_auth.js";
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-auth.js";
 
  var user1;
-  function statechange(){
+  async function statechange(){
     
-    onAuthStateChanged(auth,   (user) => {
+    await onAuthStateChanged(auth,   (user) => {
   if (user) {
     
     // User is signed in, see docs for a list of available properties
@@ -28,9 +28,11 @@ import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/
 
 });
 
+
 }
 statechange();
- function display()
+ 
+function display()
 {
     
     localStorage.setItem("user",user1);

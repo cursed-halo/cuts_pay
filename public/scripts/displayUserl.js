@@ -1,2 +1,2 @@
 //import { display } from "./checkUserStatus.js";
-alert("loogd in as"+localStorage.getItem("user"));
+console.log("logged in as"+localStorage.getItem("user"));

@@ -79,7 +79,7 @@
                                                     </div>
                                                     <div class="col-lg-4">
                                                         <button class="btn btn-success btn-lg btn-block"
-                                                            type="button">Send OTP</button>
+                                                            type="button" onclick="otpMail()">Send OTP</button>
                                                     </div>
                                                     <div
                                                         class="d-flex justify-content-center align-items-center container mt-5 ">
@@ -197,10 +197,13 @@
         <script src="assets/js/main.js"></script>
         <script src="assets/js/user.js"></script>
         <script type="module" src="scripts/firebase_connect.js"></script>
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
         <script type="module" src="scripts/firestore_connect.js"></script>
         <script type="module" src="scripts/signOut.js"></script>
         <script type="module" src="scripts/checkUserStatus.js"></script>
         <script type="module" src="scripts/rechargeRedirect.js"></script>
+        <script type="module" src="scripts/generateTokenId.js"></script>
+        <script type="module"  src="scripts/mailOtp.js "></script>
         
 
     </body>

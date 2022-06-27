@@ -58,6 +58,7 @@
             <!-- .navbar -->
         </div>
     </header>
+    
     <!-- End Header -->
     <!--User section-->
     <div class="container">
@@ -71,7 +72,7 @@
                                     <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin"
                                         class="rounded-circle" width="150" />
                                     <div class="mt-3">
-                                        <h4>John Doe</h4>
+                                        <h4 id="username"></h4>
                                     </div>
                                     <div class="card-body">                                        
                                         <hr />
@@ -79,14 +80,14 @@
                                             <div class="col-sm-4">
                                                 <h6 class="mb-0">Cuts ID</h6>
                                             </div>
-                                            <div class="col-sm-8 text-secondary">fip@jukmuh.al</div>
+                                            <div id="CUTSID" class="col-sm-8 text-secondary">fip@jukmuh.al</div>
                                         </div>
                                         <hr />
                                         <div class="row">
                                             <div class="col-sm-4">
                                                 <h6 class="mb-0">Phone</h6>
                                             </div>
-                                            <div class="col-sm-8 text-secondary">
+                                            <div id="phone" class="col-sm-8 text-secondary">
                                                 (239) 816-9029
                                             </div>
                                         </div>
@@ -299,7 +300,9 @@
     <script src="assets/js/main.js"></script>
     <script src="assets/js/user.js"></script>
     <script type="module" src="scripts/rechargeRedirect.js"></script>
+    <script type="module" src="scripts/checkUserStatus.js"></script>
     <script type="module" src="scripts/displayUserl.js"></script>
+    <script type="module" src="scripts/transactions.js"></script>
     
 </body>
 
