@@ -7,8 +7,11 @@ if(userEmail!="null")
     {
     console.log("i am here")
     document.getElementById("userState").innerHTML="in";
+    }else
+    {
+        document.getElementById("userState").innerHTML="out";
     }
-document.getElementById("userState").innerHTML="out";
+
 }
 else
 {
