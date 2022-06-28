@@ -1,5 +1,5 @@
 var userEmail=localStorage.getItem("user")
-if(userEmail!="null")
+if(userEmail.length()>4)
 {
     console.log(userEmail+"signin");
 document.getElementById("userState").innerHTML="out";
