@@ -3,14 +3,14 @@ import { getAuth, signInWithPopup, GoogleAuthProvider,signOut } from "https://ww
 function signoutSite()
 {
   var user=localStorage.getItem("user");
-  if(user=="null")
+  if(user==null)
   {
     alert("You are not yet signed in");
     return;
   }
   signOut(auth).then((e) => {
     
-    localStorage.setItem("user","null")
+    localStorage.setItem("user",null)
     alert("you have successfully signed out")
   window.location.replace("./index.html");
 }).catch((error) => {
