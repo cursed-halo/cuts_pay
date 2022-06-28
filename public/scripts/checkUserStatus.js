@@ -38,7 +38,7 @@ statechange();
 function display()
 {
     
-    localStorage.setItem("user",user1);
+    //localStorage.setItem("user",user1);
     
 }
 setTimeout(display,3000);

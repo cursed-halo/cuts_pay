@@ -4,6 +4,7 @@ function signoutSite()
 {
   signOut(auth).then((e) => {
     alert(auth.currentUser);
+    localStorage.setItem("user","null")
   window.location.replace("./index.html");
 }).catch((error) => {
  alert("error");
