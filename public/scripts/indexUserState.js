@@ -5,7 +5,7 @@ if(userEmail!="null")
     console.log(userEmail+"signin");
     if(userEmail==null)
     {
-        console.log("i am here")
+    console.log("i am here")
     document.getElementById("userState").innerHTML="in";
     }
 document.getElementById("userState").innerHTML="out";
