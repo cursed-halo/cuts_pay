@@ -4,7 +4,7 @@ function signoutSite()
 {
   signOut(auth).then((e) => {
     alert(auth.currentUser);
-  window.location.replace("./signin.html");
+  window.location.replace("./index.html");
 }).catch((error) => {
  alert("error");
 });

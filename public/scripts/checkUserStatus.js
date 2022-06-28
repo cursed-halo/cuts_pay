@@ -23,6 +23,7 @@ import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/
     // ...
   } else {
     console.log("signed out");
+    user1="null";
     // User is signed out
     // ...
 

@@ -8,7 +8,9 @@ function signIn(){
       const credential = GoogleAuthProvider.credentialFromResult(result);
       const token = credential.accessToken;
       // The signed-in user info
-      window.location.replace("./index.html");
+      window.location.replace("./index.html").reload;
+     
+     // document.location.reload()
      //window.location = "./recharge.html";
       const useremail = result.user.email;
       alert(useremail);
