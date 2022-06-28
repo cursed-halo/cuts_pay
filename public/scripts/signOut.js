@@ -11,7 +11,7 @@ function signoutSite()
   signOut(auth).then((e) => {
     
     localStorage.setItem("user","null");
-    alert("you are successfully signed")
+    alert("you are successfully signed out")
   window.location.replace("./index.html");
 }).catch((error) => {
  alert("error");
