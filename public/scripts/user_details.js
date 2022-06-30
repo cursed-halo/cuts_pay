@@ -4,6 +4,7 @@ import {  query, where,getDocs } from "https://www.gstatic.com/firebasejs/9.8.4/
 var isPassOkay=false;
 var isCutsIdOkay=false;
 var isPhoneNoOkay=false;
+var isNameOkay=false;
 var idField = document.getElementById("cuts_ID")
 idField.addEventListener(
     "keyup", displayID);
@@ -12,16 +13,45 @@ async function displayID(e) {
     const users = collection(db, "user");
     const q1=query(users,where("CUTSID", "==",e.target.value));
     const querySnapshotUsers = await getDocs(q1);
-    if(querySnapshotUsers.size==0)
+    if(querySnapshotUsers.size==0 && e.target.value.length>0 && containsLowerCase(e.target.value) && !containsSpecialCharacter(e.target.value))
     {
+        document.getElementById("cuts_id_icon").innerHTML='<i class="fa fa-check-circle-o" aria-hidden="true"></i>'
         console.log("okay");
         isCutsIdOkay=true;
     }
     
     else
-    console.log("Not okay")
-    console.log(e.target.value);
+    {
+        console.log("Not okay")
+        console.log(e.target.value);
+        document.getElementById("cuts_id_icon").innerHTML='<i class="fa fa-times-circle-o" aria-hidden="true"></i>'
+        isCutsIdOkay=false;
+    }
+    
 }
+var nameField = document.getElementById("user_name");
+nameField.addEventListener(
+    "keyup", displayName
+);
+function displayName(e)
+{
+    
+    
+    if(e.target.value.length>0)
+    {
+        document.getElementById("name_icon").innerHTML='<i class="fa fa-check-circle-o" aria-hidden="true"></i>'
+        isNameOkay=true;
+        console.log("okay")
+    }
+   else
+   {
+    console.log("Not okay")
+    document.getElementById("name_icon").innerHTML='<i class="fa fa-times-circle-o" aria-hidden="true"></i>'
+    isNameOkay=false;
+   }
+}
+
+
 var phoneField = document.getElementById("phn_no")
 phoneField.addEventListener(
     "keyup", displayPhone);
@@ -35,11 +65,17 @@ phoneField.addEventListener(
         {
             //console.log(querySnapshotUsers.doc.data());
             console.log("okay");
+            document.getElementById("phone_icon").innerHTML='<i class="fa fa-check-circle-o" aria-hidden="true"></i>'
             isPhoneNoOkay=true;
         }
         
         else
-        console.log("Not okay")
+        {
+            document.getElementById("phone_icon").innerHTML='<i class="fa fa-times-circle-o" aria-hidden="true"></i>'
+            console.log("Not okay")
+            isPhoneNoOkay=false;
+        }
+        
         
     }
     var passwordField = document.getElementById("pass")
@@ -52,12 +88,17 @@ phoneField.addEventListener(
             {
 
                 //console.log(querySnapshotUsers.doc.data());
+                document.getElementById("password_icon").innerHTML='<i class="fa fa-check-circle-o" aria-hidden="true"></i>'
                 console.log("okay");
                 isPassOkay=true;
             }
             
             else
-            console.log("Not okay")
+            {
+                console.log("Not okay")
+                document.getElementById("password_icon").innerHTML='<i class="fa fa-times-circle-o" aria-hidden="true"></i>'
+                isPassOkay=false;
+            }
             
         }
         function continsNumber(str)
@@ -78,22 +119,18 @@ phoneField.addEventListener(
 
 async function onsubmit()
 {
-    if(isCutsIdOkay&&isPassOkay&&isPhoneNoOkay)
+    if(isCutsIdOkay&&isPassOkay&&isPhoneNoOkay&&isNameOkay)
     {
         console.log("okay");
-        try{
+       
         const newUser = await addDoc(collection(db, "user"), {
             CUTSID:idField.value,
             Email:localStorage.getItem("user") ,
-            Name:"",
+            Name:nameField.value,
             Phone:Number(phoneField.value),
             password:passwordField.value
           });
-        }
-        catch
-        {
-            alert("error")
-        }
+        
          
           window.location.replace("./index.html")
     }
@@ -103,4 +140,4 @@ async function onsubmit()
     }
 
 }
-document.getElementById("submit_button").addEventListener('click',onsubmit)
+ document.getElementById("submit_button").addEventListener('click', onsubmit)
