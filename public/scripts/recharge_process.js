@@ -9,7 +9,7 @@ async function getInfo() {
     const otp=otpGenerator();
      res = await fetch(baseUrl + str+"&otp="+otp, {
         method: 'GET'
-    }).then((res)=>{return res.json()}).then((data)=>console.log(data))
+    }).then((res)=>{return res.json()}).then((data)=>alert(data.status))
   
    
 }
