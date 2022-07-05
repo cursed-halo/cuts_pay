@@ -63,27 +63,27 @@
                                     </div>
                                     <div class="col-md-6 col-lg-7 d-flex align-items-center">
                                         <div class="card-body p-4 p-lg-5 text-black">
-                                            <form name="myForm" action="/action_page.php" method="post"
-                                                onsubmit="return func()" required>
+                                            <form name="myForm"  method="post" onsubmit="submitForm(event)"
+                                                 required>
                                                 <h5 class="fw-normal mb-2 pb-3" style="letter-spacing: 1px;">
                                                     <h3>Recharge Here</h3>
                                                 </h5>
                                                 <div class="form-outline mb-2">
-                                                    <input type="number" id="form2Example17"
-                                                        class="form-control form-control-lg" name="fname"
+                                                    <input type="number" id="recharge_amount"
+                                                        class="form-control form-control-lg" name="amount"
                                                         placeholder="Enter the Amount" />
                                                 </div>
                                                  
 
                                                  <div class="row mt-3">
                                                     <div class="col-lg-8">
-                                                        <input type="number" id="form2Example17"
-                                                            class="form-control form-control-lg" name="fname"
-                                                            placeholder="Enter Your Mobile Number" />
+                                                        <input type="number" id="recharge_mail"
+                                                            class="form-control form-control-lg" name="mail"
+                                                            placeholder="Enter Your CUTS ID" />
                                                     </div>
                                                     <div class="col-lg-4">
                                                         <button class="btn btn-success btn-lg btn-block"
-                                                            type="button" onclick="otpMail()">Send OTP</button>
+                                                            type="button" id="otpButton">Send OTP</button>
                                                     </div> 
 
 
@@ -91,7 +91,7 @@
                                                         class="d-flex justify-content-center align-items-center container mt-5 ">
                                                         <div class="card border-0">
                                                             <span class="mobile-text text-center">Enter the code we just
-                                                                send on your mobile phone</span>
+                                                                send on your mail</span>
                                                             <div class="d-flex flex-rowpt-3 pt-3">
                                                                 <input type="number" id="text1" maxlength="1"
                                                                     onkeyup="moveCursor(this, 'text2')"
@@ -206,7 +206,13 @@
         <script type="module" src="scripts/checkUserStatus.js"></script>
         <script type="module" src="scripts/rechargeRedirect.js"></script>
         <script type="module" src="scripts/generateTokenId.js"></script>
-        <script type="module"  src="scripts/mailOtp.js "></script>
+        <script type="module"  src="scripts/recharge_process.js "></script>
+        <script type="text/JavaScript">
+            function submitForm(event){
+              event.preventDefault();
+             
+            }
+          </script>
         
 
     </body>

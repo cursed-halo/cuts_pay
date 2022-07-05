@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <form>
+        <input type="text" id="input" />
+        <button id="get">
+            GET
+        </button>
+        <button id="post">
+            POST
+        </button>
+    </form>
+    <script>
+        const getbtn=document.getElementById("get")
+        const baseUrl="http://127.0.0.1:4000/hello"
+        getbtn.addEventListener('click',getInfo)
+        async function getInfo(e)
+        {
+            console.log("HI");
+            e.preventDefault();
+            const res=await fetch(baseUrl+"?mail=amitpaul8774@gmail.com",
+            {
+                method:'GET'
+            })
+           
+        }
+    </script>
+</body>
+</html>
