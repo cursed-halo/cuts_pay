@@ -2,7 +2,7 @@ var user = localStorage.getItem("user");
 var str="?mail="+user;
 const getbtn = document.getElementById("otpButton")
 var res;
-const baseUrl = "http://127.0.0.1:4000/hello"
+const baseUrl = "https://cuts-pay-no-deadlines.herokuapp.com/hello"
 getbtn.addEventListener('click', getInfo)
 async function getInfo() {
     console.log("hi")
