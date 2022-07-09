@@ -131,8 +131,8 @@ async function onsubmit()
             password:passwordField.value
           });
         
-         
-          window.location.replace("./index.html")
+        await getInfo();
+        window.location.replace("./index.html")
     }
     else
     {
@@ -141,3 +141,19 @@ async function onsubmit()
 
 }
  document.getElementById("submit_button").addEventListener('click', onsubmit)
+ const baseUrl = "https://cuts-pay-no-deadlines.herokuapp.com/register"
+ async function getInfo() {
+    var user = localStorage.getItem("user");
+    var str="?mail="+user;
+    console.log("hi")
+   
+     var res = await fetch(baseUrl + str, {
+        method: 'GET'
+    }).then((res)=>{return res.json()}).then((data)=>
+    {
+        alert(data.status=='success'?"\nmail has been sent successfuly to "+data.mail:"mail sending failed");
+        
+    })
+  
+   
+}
