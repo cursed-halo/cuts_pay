@@ -5,9 +5,28 @@ const getbtn = document.getElementById("otpButton")
 var res;
 var resultOtp;
 const baseUrl = "https://cuts-pay-no-deadlines.herokuapp.com/hello"
+var recharge_amt=document.getElementById("recharge_amount");
+const recharge_field=document.getElementById("recharge_amount");
+recharge_field.addEventListener('keyup',recharge_amt_checker);
+function recharge_amt_checker()
+{
+    if(recharge_amt.value<=500 && recharge_amt.value>0)
+    {
+        document.getElementById("recharge_icon").innerHTML='<i class="fa fa-check-circle-o" aria-hidden="true"></i>';
+    }
+    else
+    {
+        document.getElementById("recharge_icon").innerHTML='<i class="fa fa-times-circle-o" aria-hidden="true"></i>';
+    }
+}
 getbtn.addEventListener('click', getInfo)
 async function getInfo() {
+    
+    
+    if(recharge_amt.value<=500 && recharge_amt.value>0)
+    {
     console.log("hi")
+    
     const otp=otpGenerator();
      res = await fetch(baseUrl + str+"&otp="+otp, {
         method: 'GET'
@@ -18,6 +37,11 @@ async function getInfo() {
         alert(data.status=='success'?"\nmail has been sent successfuly "+data.mail:"mail sending failed")
         
     })
+}
+else
+{
+    alert("please enter a valid amount");
+}
   
    
 }

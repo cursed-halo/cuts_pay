@@ -2,6 +2,9 @@
 <html lang="en">
 
     <head>
+        <link rel="stylesheet" 
+          href=
+"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">>
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <title>CUTS: Recharge</title>
@@ -68,19 +71,25 @@
                                                 <h5 class="fw-normal mb-2 pb-3" style="letter-spacing: 1px;">
                                                     <h3>Recharge Here</h3>
                                                 </h5>
+                                                <div id="recharge_icon"></div>
                                                 <div class="form-outline mb-2">
                                                     <input type="number" id="recharge_amount"
                                                         class="form-control form-control-lg" name="amount"
                                                         placeholder="Enter the Amount" />
                                                 </div>
-                                                 
+                                                <span class="text-muted">
+                                                    <ul>
+                                                        <li><small><em>Max amount can be 500</em> </small></li>
+                                                       
+                                                    </ul>
+                                                </span>
 
                                                  <div class="row mt-3">
-                                                    <div class="col-lg-8">
+                                                    <!-- <div class="col-lg-8">
                                                         <input type="number" id="recharge_mail"
                                                             class="form-control form-control-lg" name="mail"
                                                             placeholder="Enter Your CUTS ID" />
-                                                    </div>
+                                                    </div> -->
                                                     <div class="col-lg-4">
                                                         <button class="btn btn-success btn-lg btn-block"
                                                             type="button" id="otpButton">Send OTP</button>
