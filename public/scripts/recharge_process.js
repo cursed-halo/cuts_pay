@@ -26,8 +26,9 @@ async function getInfo() {
     if(recharge_amt.value<=500 && recharge_amt.value>0)
     {
     console.log("hi")
-    
+    otpTimer();
     const otp=otpGenerator();
+
      res = await fetch(baseUrl + str+"&otp="+otp, {
         method: 'GET'
     }).then((res)=>{return res.json()}).then((data)=>
@@ -81,3 +82,29 @@ function otpGenerator()
      const val=Math.floor(1000+Math.random()*9000).toString();
     return val;
 }
+// var countDownDate = new Date("July 27, 2022 15:37:25").getTime();
+// var today= new Date().toLocaleTimeString();
+// console.log(today)
+
+function otpTimer()
+{
+    var k=10;
+    var x=setInterval(function(){
+        if(k>=0)
+        {
+            document.getElementById("otpButton").innerHTML="please Wait";
+            document.getElementById("otpButton").disabled=true;
+            document.getElementById("timer").innerHTML="Did not receive otp? Please wait for "+k+" s";
+            console.log(k--)
+        }
+       
+        else{
+            document.getElementById("timer").innerHTML="Request for otp again";
+            document.getElementById("otpButton").innerHTML="Send OTP";
+            document.getElementById("otpButton").disabled=false;
+            clearInterval(x);
+        }
+    },1000)
+}
+
+
