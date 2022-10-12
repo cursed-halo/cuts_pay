@@ -2,6 +2,10 @@ var user = localStorage.getItem("user");
 var str="?mail="+user;
 var matchCount=0;
 const getbtn = document.getElementById("otpButton")
+const otpCard=document.getElementById("otp_div")
+const prev_otpCard=otpCard.innerHTML;
+otpCard.innerHTML=null;
+otpCard
 var res;
 var resultOtp;
 const baseUrl = "https://cuts-pay-no-deadlines.herokuapp.com/hello"
@@ -33,6 +37,14 @@ async function getInfo() {
         method: 'GET'
     }).then((res)=>{return res.json()}).then((data)=>
     {
+        if(data.status=='success')
+        {
+            otpCard.innerHTML=prev_otpCard;
+            const tokenIdbtn = document.getElementById("tokenId")
+            tokenIdbtn.addEventListener('click',matchOtp)
+
+        }
+        
         localStorage.setItem("userOtp",data.otp);
         matchCount=0;
         alert(data.status=='success'?"\nmail has been sent successfuly "+data.mail:"mail sending failed")
@@ -46,8 +58,9 @@ else
   
    
 }
-const tokenIdbtn = document.getElementById("tokenId")
-tokenIdbtn.addEventListener('click',matchOtp)
+
+
+
 
 function matchOtp()
 {
