@@ -78,7 +78,10 @@ function matchOtp()
     {
         matchCount++;
         if(matchCount>2)
+        {
         alert("Please ask for a new otp.\nExceeded maximum attempts")
+        otpCard.innerHTML=null;
+        }
         else
         {
             console.log(localStorage.getItem("userOtp"))
