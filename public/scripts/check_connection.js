@@ -3,7 +3,7 @@ console.log("checking")
     async function ajax(){
         let xhr=new XMLHttpRequest();
         try{
-         xhr.open("GET","https://google.com"
+         xhr.open("GET","https://cuts-pay-no-deadlines.herokuapp.com/hello"
          );
         
             xhr.send();
