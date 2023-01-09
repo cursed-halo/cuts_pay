@@ -27,7 +27,7 @@ getbtn.addEventListener('click', getInfo)
 async function getInfo() {
     
     
-    if(recharge_amt.value<=500 && recharge_amt.value>0)
+    if(recharge_amt.value<=200 && recharge_amt.value>0)
     {
     console.log("hi")
     otpTimer();
