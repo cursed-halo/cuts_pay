@@ -8,7 +8,7 @@ otpCard.innerHTML=null;
 otpCard
 var res;
 var resultOtp;
-const baseUrl = "http://127.0.0.1:5500/"
+const baseUrl = "https://127.0.0.1:5500/"
 var recharge_amt=document.getElementById("recharge_amount");
 const recharge_field=document.getElementById("recharge_amount");
 recharge_field.addEventListener('keyup',recharge_amt_checker);
