@@ -72,7 +72,8 @@ function matchOtp()
         console.log(enteredOtp)
         matchCount=0;
         localStorage.setItem("userOtp",null)
-        alert("You are verified");
+        alert("You are verified \n Press enter to proceed to payments");
+        window.location.replace("Payment_self.html");
     }
     else
     {
