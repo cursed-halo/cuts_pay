@@ -102,7 +102,7 @@
                                                     <label style="float: right;position: relative; left: 30px ;" class="form-label" for="form2Example27">CVV</label>   
                                                 </div>
                                                 <div  style class="pt-1 mb-4">
-                                                    <button class="btn btn-dark btn-lg btn-block"
+                                                    <button onclick="done()" class="btn btn-dark btn-lg btn-block"
                                                     type="submit" style="background-color: green;"
                                                              id="submit_button">CheckOut</button>
                                                 </div>
@@ -186,7 +186,11 @@
         <script type="text/JavaScript">
             function submitForm(event){
               event.preventDefault();
+
              
+            }
+            function done() {
+                window.location.replace("recharge_successful.html");
             }
           </script>
     </body>
