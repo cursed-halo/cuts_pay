@@ -5,6 +5,14 @@ import {
 import {
     auth
 } from "./firebase_auth.js";
+import {
+    db
+  } from "./firestore_connect.js"
+  import {
+    query,
+    where,
+    getDocs
+  } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-firestore.js";
 var user = localStorage.getItem("user");
 var str = "?mail=" + user;
 var matchCount = 0;
@@ -80,11 +88,19 @@ async function matchOtp(email) {
         } else {
             const successData = await response.json();
             matchCount = 0;
+            
             // localStorage.setItem("userOtp", null)
+            // Function to call the /recharge endpoint and perform a recharge operation
+
+  // Example usage:
+             //performRecharge(user.email, );
+  
+             document.cookie = ""+recharge_amt.value;
             alert("You are verified \n Press enter to proceed to payments");
+
             window.location.replace("Payment_self.html");
             console.log(successData.message);
-            alert('OTP verified successfully!');
+            
         }
     } catch (error) {
         console.error('Error sending verify OTP request:', error);
@@ -92,6 +108,7 @@ async function matchOtp(email) {
     }
 }
 
+  
 
 
 // function matchOtp() {
@@ -160,3 +177,39 @@ function otpTimer() {
         }
     }, 1000)
 }
+// Function to call the /encrypt endpoint and get the encrypted data
+function encryptData(plaintext) {
+    // URL of the server endpoint
+    const url = '/encrypt';
+  
+    // Data to be sent in the request body
+    const data = { plaintext };
+  
+    // Use the fetch API to post the data to the server
+    fetch(url, {
+      method: 'POST', // or 'PUT'
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data), // convert the JavaScript object to a JSON string
+    })
+    .then(response => {
+      // Check if the response is ok (status code 200-299)
+      if (!response.ok) {
+        throw new Error('Network response was not ok ' + response.statusText);
+      }
+      return response.json(); // Parse the JSON in the response
+    })
+    .then(data => {
+      console.log('Encrypted data:', data.encrypted);
+      // Do something with the encrypted data here
+    })
+    .catch(error => {
+      console.error('There has been a problem with your fetch operation:', error);
+      // Handle any errors here
+    });
+  }
+  
+  // Example usage:
+  
+  
