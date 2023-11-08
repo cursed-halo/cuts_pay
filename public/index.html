@@ -1,418 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to Firebase Hosting</title>
 
-    <head>
-        <meta charset="utf-8">
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <title>CUTS</title>
-        <meta content="" name="description">
-        <meta content="" name="keywords">
-        <!-- Favicons -->
-        <link href="assets/img/cuts.png" rel="icon">
-        <!-- Google Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap"
-            rel="stylesheet">
-        <!-- Vendor CSS Files -->
-        <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-        <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-        <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-        <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-        <!-- color scheme -->
-        <link href="assets/css/variables.css" rel="stylesheet">
-        <link href="assets/css/main.css" rel="stylesheet">
-    </head>
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/10.5.2/firebase-app-compat.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/10.5.2/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/10.5.2/firebase-database-compat.js"></script>
+    <script defer src="/__/firebase/10.5.2/firebase-firestore-compat.js"></script>
+    <script defer src="/__/firebase/10.5.2/firebase-functions-compat.js"></script>
+    <script defer src="/__/firebase/10.5.2/firebase-messaging-compat.js"></script>
+    <script defer src="/__/firebase/10.5.2/firebase-storage-compat.js"></script>
+    <script defer src="/__/firebase/10.5.2/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/10.5.2/firebase-remote-config-compat.js"></script>
+    <script defer src="/__/firebase/10.5.2/firebase-performance-compat.js"></script>
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
 
-    <body style="background-color: rgb(237, 237, 237);">
-        <!-- ======= Header ======= -->
-        <header id="header" class="header fixed-top" data-scroll-offset="0">
-            <div class="container-fluid d-flex align-items-center justify-content-between">
-                <a href="index.html" class="logo d-flex align-items-center scrollto me-auto me-lg-0">
-                    <img src="assets/img/CUTS_logo1-1.png" alt="">
-                    <h1 class="d-none d-lg-block">The <span class="text-primary">CUTS</span><span>.</span></h1>
-                </a>
-                <nav id="navbar" class="navbar">
-                    <ul>
-                        <li><a class="nav-link scrollto active" href="index.html">Home</a></li>
-                        <li><a class="nav-link scrollto" href="recharge.html">Recharge</a></li>
-                        <li><a class="nav-link scrollto" href="learnmore.html">Learn More</a></li>
-                        <li><a class="nav-link scrollto" href="team.html">Team</a></li>
-                        <li><a class="nav-link scrollto" href="contact.html">Contact</a></li>
-                        <li><a class="nav-link scrollto" href="userpage.html">Account</a></li>
+    <style media="screen">
+      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
+      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
+      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
+      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
+      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
+      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
+      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
+      @media (max-width: 600px) {
+        body, #message { margin-top: 0; background: white; box-shadow: none; }
+        body { border-top: 16px solid #ffa100; }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="message">
+      <h2>Welcome</h2>
+      <h1>Firebase Hosting Setup Complete</h1>
+      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
+      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+    </div>
+    <p id="load">Firebase SDK Loading&hellip;</p>
 
-                    </ul>
-                    <i class="bi bi-list mobile-nav-toggle d-none pt-4"></i>
-                </nav><!-- .navbar -->
-                <a class="btn-getstarted scrollto" href="signin.html">Sign <span id="userState"></span></a>
-            </div>
-        </header><!-- End Header -->
-        <!-- ======= Hero Section ======= -->
-        <section id="hero" class="hero carousel  carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
-            <div class="carousel-item active">
-                <div class="container">
-                    <div class="row justify-content-center gy-6">
-                        <div class="col-lg-5 col-md-8">
-                            <img src="assets/img/hero-carousel/hero-carousel.svg" alt="" class="img-fluid img">
-                        </div>
-                        <div class="col-lg-9 text-center"> 
-                            <h2>Welcome to <span class="color-primary">THE CUTS PROJECT</span></h2>
-                            <p>The Road To A Cashless Future - Offline, Secure And Blazing Fast!</p>
-                            <a href="learnmore.html" class="btn-get-started scrollto ">Get Started</a>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- End Carousel Item -->
-        </section><!-- End Hero Section -->
-        <!-- ======= About Section ======= -->
-        <section id="about" class="about">
-            <div class="container" data-aos="fade-up">
-                <div class="row g-4 g-lg-5" data-aos="fade-up" data-aos-delay="200">
-                    <div class="col-lg-5">
-                        <div class="about-img">
-                            <img src="https://cdn0.iconfinder.com/data/icons/business-aqua-vol-2/500/Solution-512.png"
-                                class="img-fluid" alt="">
-                        </div>
-                    </div>
-                    <div class="col-lg-7">
-                        <h3 class="pt-0 pt-lg-5">Common Issues We Seek To Resolve </h3>
-                        <!-- Tabs -->
-                        <ul class="nav nav-pills mb-3">
-                            <li><a class="nav-link active" data-bs-toggle="pill" href="#tab1">Problems</a></li>
-                            <li><a class="nav-link" data-bs-toggle="pill" href="#tab2">Solution</a></li>
-                        </ul><!-- End Tabs -->
-                        <!-- Tab Content -->
-                        <div class="tab-content">
-                            <div class="tab-pane fade show active" id="tab1">
-                                <div class="d-flex align-items-center mt-4">
-                                    <i class="bi bi-check2"></i>
-                                    <h4>It's Hard To Pay The Exact Amount During Rush Time With Change</h4>
-                                </div>
-                                <div class="d-flex align-items-center mt-4">
-                                    <i class="bi bi-check2"></i>
-                                    <h4>UPI Is Unstable And Internet Dependent</h4>
-                                </div>
-                                <div class="d-flex align-items-center mt-4">
-                                    <i class="bi bi-check2"></i>
-                                    <h4>An Ageing And Tech Unfamiliar User Base Can Not Use Modern Mobile Based
-                                        Solutions Easily</h4>
-                                </div>
-                                <div class="d-flex align-items-center mt-4">
-                                    <i class="bi bi-check2"></i>
-                                    <h4>It's Hard To Carry Around A Lot Of Change All The Time</h4>
-                                </div>
-                            </div><!-- End Tab 1 Content -->
-                            <div class="tab-pane fade show" id="tab2">
-                                <div class="d-flex align-items-center mt-4">
-                                    <i class="bi bi-check2"></i>
-                                    <h4>We Are Using A Near Instantaneous NFC Based System</h4>
-                                </div>
-                                <div class="d-flex align-items-center mt-4">
-                                    <i class="bi bi-check2"></i>
-                                    <h4>No Internet Dependency For Transactions</h4>
-                                </div>
-                                <div class="d-flex align-items-center mt-4">
-                                    <i class="bi bi-check2"></i>
-                                    <h4>Highly Simple And User Friendly System To Ensure That Everyone Can Participate
-                                    </h4>
-                                </div>
-                                <div class="d-flex align-items-center mt-4">
-                                    <i class="bi bi-check2"></i>
-                                    <h4>One CUTS Token For All Your Needs</h4>
-                                </div>
-                            </div><!-- End Tab 2 Content -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section><!-- End About Section -->
-        <!-- ======= Featured Services Section ======= -->
-        <section id="featured-services" class="featured-services">
-            <div class="container">
-                <div class="row gy-4">
-                    <div class="section-header">
-                        <h2>Key Highlights Of The CUTS System</h2>
-                    </div>
-                    <div class=" col-6 col-md-4 col-lg-3" data-aos="zoom-out">
-                        <div class="service-item position-relative">
-                            <div class="icon"><i class="bi bi-activity icon"></i></div>
-                            <h4><a href="" class="stretched-link">Digital</a></h4>
-                            <p class="d-none d-lg-block">All inclusive digital transaction system for all Indians</p>
-                        </div>
-                    </div><!-- End Service Item -->
-                    <div class=" col-6 col-md-4 col-lg-3" data-aos="zoom-out" data-aos-delay="200">
-                        <div class="service-item position-relative">
-                            <div class="icon"><i class="bi bi-bounding-box-circles icon"></i></div>
-                            <h4><a href="" class="stretched-link">Offline</a></h4>
-                            <p class="d-none d-lg-block">Offline based solution to ensure maximum participation</p>
-                        </div>
-                    </div><!-- End Service Item -->
-                    <div class=" col-6 col-md-4 col-lg-3" data-aos="zoom-out" data-aos-delay="400">
-                        <div class="service-item position-relative">
-                            <div class="icon"><i class="bi bi-calendar4-week icon"></i></div>
-                            <h4><a href="" class="stretched-link">Secure</a></h4>
-                            <p class="d-none d-lg-block">Highly secure NFC based transaction system</p>
-                        </div>
-                    </div><!-- End Service Item -->
-                    <div class=" col-6 col-md-4 col-lg-3" data-aos="zoom-out" data-aos-delay="600">
-                        <div class="service-item position-relative">
-                            <div class="icon"><i class="bi bi-broadcast icon"></i></div>
-                            <h4><a href="" class="stretched-link">Hassle Free</a></h4>
-                            <p class="d-none d-lg-block">Simple and Efficient - Made with everyone in mind</p>
-                        </div>
-                    </div><!-- End Service Item -->
-                </div>
-            </div>
-        </section><!-- End Featured Services Section -->
-        <div class="section-header">
-            <h2>How Does It Work</h2>
-        </div>
-        <!-- ======= Features Section ======= -->
-        <section id="features" class="features">
-            <div class="container" data-aos="fade-up">
-                <ul class="nav nav-tabs row gy-4 d-flex">
-                    <li class="nav-item col-6 col-md-4 col-lg-3">
-                        <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#tab-1">
-                            <i class="bi bi-coin color-cyan"></i>
-                            <h4>CUTS Token</h4>
-                        </a>
-                    </li><!-- End Tab 1 Nav -->
-                    <li class="nav-item col-6 col-md-4 col-lg-3">
-                        <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2">
-                            <i class="bi bi-box-seam color-indigo"></i>
-                            <h4>CUTS Box</h4>
-                        </a>
-                    </li><!-- End Tab 2 Nav -->
-                    <li class="nav-item col-6 col-md-4 col-lg-3">
-                        <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3">
-                            <i class="bi bi-bank color-teal d-flex align-items-center"></i>
-                            <h4>The Merchant Side</h4>
-                        </a>
-                    </li><!-- End Tab 3 Nav -->
-                    <li class="nav-item col-6 col-md-4 col-lg-3">
-                        <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-4">
-                            <i class="bi bi-person-check-fill color-red"></i>
-                            <h4>The Consumer Side</h4>
-                        </a>
-                    </li><!-- End Tab 4 Nav -->
-                </ul>
-                <div class="tab-content">
-                    <div class="tab-pane active show" id="tab-1">
-                        <div class="row gy-4 container-fluid">
-                            <div class="col-lg-10 col-md-10 col-sm-10 align-items-center container container-fluid order-2 order-lg-1"
-                                data-aos="fade-up" data-aos-delay="100">
-                                <h3 class="text-center text-primary">The CUTS Token</h3>
-                                <hr>
-                                <p>A Simple NFC Based Token That Is The Be All And End All Solution For All Your Small
-                                    Scale Transaction Needs!</p>
-                                <ul>
-                                    <li><i class="bi bi-check-circle-fill"></i>Secure NFC Token With Industry Standard
-                                        Encryption</li>
-                                    <li><i class="bi bi-check-circle-fill"></i>Linked With UID</li>
-                                    <li><i class="bi bi-check-circle-fill"></i>Small And Easily Carried Around</li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-4 order-1 order-lg-2 text-center" data-aos="fade-up"
-                                data-aos-delay="200">
-                                <img src="assets/img/features-1.svg" alt="" class="img-fluid">
-                            </div>
-                        </div>
-                    </div><!-- End Tab Content 1 -->
-                    <div class="tab-pane" id="tab-2">
-                        <div class="row gy-4">
-                            <div
-                                class="col-lg-10 col-md-10 col-sm-10 align-items-center container container-fluid order-2 order-lg-1">
-                                <h3 class="text-center text-primary">The CUTS Box</h3>
-                                <hr>
-                                <p>Will Be Used By Vendors And Merchants To Primarily Accept Payments Entirely Offline
-                                    And Then Transfer Based On When They Want To Through Whichever Method Suits Them -
-                                    No More Internet Dependency Mandatory For Every Little Thing</p>
-                                <ul>
-                                    <li><i class="bi bi-check-circle-fill"></i>Powered Through Rechargeable Batteries
-                                    </li>
-                                    <li><i class="bi bi-check-circle-fill"></i>Simple And User Friendly Interface</li>
-                                    <li><i class="bi bi-check-circle-fill"></i>Blazing Fast Transactions With No Delays
-                                        Or Hangups</li>
-                                    <li><i class="bi bi-check-circle-fill"></i>Semi Online POS - Never Let Internet
-                                        Availability Stop You Again</li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-4 order-1 order-lg-2 text-center">
-                                <img src="assets/img/features-2.svg" alt="" class="img-fluid">
-                            </div>
-                        </div>
-                    </div><!-- End Tab Content 2 -->
-                    <div class="tab-pane" id="tab-3">
-                        <div class="row gy-4">
-                            <div
-                                class="col-lg-10 col-md-10 col-sm-10 align-items-center container container-fluid order-2 order-lg-1">
-                                <h3 class="text-center text-primary">The Merchant Side</h3>
-                                <hr>
-                                <p>So Now That You've Got Your CUTS Box, How Do You Actually Use It And What Are Your
-                                    Benefits - From Easy Payments For All Of Your Sales And Services To Bonuses And
-                                    Commissions, We've Got You Covered!</p>
-                                <ul>
-                                    <li><i class="bi bi-check-circle-fill"></i>Easy Set Up And Install</li>
-                                    <li><i class="bi bi-check-circle-fill"></i>Simple Touch And Pay System, With A
-                                        Keypad To Enter The Amount And Password</li>
-                                    <li><i class="bi bi-check-circle-fill"></i>Recharge CUTS Tokens For Consumers To
-                                        Earn A Small Kickback And Future Profits</li>
-                                    <li><i class="bi bi-check-circle-fill"></i>0% Transaction Costs</li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-4 order-1 order-lg-2 text-center">
-                                <img src="assets/img/features-3.svg" alt="" class="img-fluid">
-                            </div>
-                        </div>
-                    </div><!-- End Tab Content 3 -->
-                    <div class="tab-pane" id="tab-4">
-                        <div class="row gy-4">
-                            <div
-                                class="col-lg-10 col-md-10 col-sm-10 align-items-center container container-fluid order-2 order-lg-1">
-                                <h3 class="text-center text-primary">The Consumer Side</h3>
-                                <hr>
-                                <p>With Your CUTS Token You Can Say Goodbye To Digging For Change And Arguing With The
-                                    Ever So Irritable Public Transport People Because All You Need To Do Now Is To
-                                    Touch, Type And Press Enter To Carry On With Actually Important Stuff - Oh And Don't
-                                    Forget To Recharge Through Either Online Means Or Through Any Shop With A CUTS Box
-                                </p>
-                                <ul>
-                                    <li><i class="bi bi-check-circle-fill"></i>Simple Transaction Process With No Delays
-                                        Or Troubles</li>
-                                    <li><i class="bi bi-check-circle-fill"></i>Highly Secure With Proper Encryption To
-                                        Ensure That Your Money Is Safe</li>
-                                    <li><i class="bi bi-check-circle-fill"></i>Recharge Anywhere You Want Or At Your
-                                        Nearest CUTS Vendor</li>
-                                    <li><i class="bi bi-check-circle-fill"></i>No Hidden Costs Or Maintenance Fees</li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-4 order-1 order-lg-2 text-center">
-                                <img src="assets/img/features-4.svg" alt="" class="img-fluid">
-                            </div>
-                        </div>
-                    </div><!-- End Tab Content 4 -->
-                </div>
-            </div>
-        </section><!-- End Features Section -->
-        <!-- ======= Pricing Section ======= -->
-        <section id="pricing" class="pricing">
-            <div class="container" data-aos="fade-up">
-                <div class="section-header">
-                    <h2>Our Plans</h2>
-                    <p>Explore Among Pricing Models Catered To You, The End User</p>
-                </div>
-                <div class="row gy-2 container container-fluid">
-                    <div class="col-lg-6 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="pricing-item">
-                            <div class="pricing-header">
-                                <h3>Prepaid Plan</h3>
-                                <h4>0.2<sup>%</sup><span> / Recharge</span></h4>
-                            </div>
-                            <ul>
-                                <li><i class="bi bi-dot"></i> <span>Higher The Amount Of Recharge, Lesser The Fee</span>
-                                </li>
-                                <li><i class="bi bi-dot"></i> <span>Get Assured Rewards On Every 5th Recharge</span>
-                                </li>
-                            </ul>
-                            <div class="text-center mt-auto">
-                                <a href="#" class="buy-btn">Choose This Plan</a>
-                            </div>
-                        </div>
-                    </div><!-- End Pricing Item -->
-                    <div class="col-lg-6 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="400">
-                        <div class="pricing-item featured">
-                            <div class="pricing-header">
-                                <h3>Postpaid Plan</h3>
-                                <h4>0.1<sup>%</sup><span> / Monthly Bill/span></h4>
-                            </div>
-                            <ul>
-                                <li><i class="bi bi-dot"></i> <span>Unlimited, Uncapped Transactions</span></li>
-                                <li><i class="bi bi-dot"></i> <span>No Late Payment Fees For The First 3 Months</span>
-                                </li>
-                            </ul>
-                            <div class="text-center mt-auto">
-                                <a href="#" class="buy-btn">Choose This Plan</a>
-                            </div>
-                        </div>
-                    </div><!-- End Pricing Item -->
-                </div>
-            </div>
-        </section><!-- End Pricing Section -->
-        <!-- ======= Footer ======= -->
-        <footer id="footer" class="footer p-4">
-            <div class="footer-content">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-5 col-md-6">
-                            <div class="footer-info">
-                                <h2 class="text-uppercase"><b>The CUTS Project</b></h2>
-                                <p> Team No Deadlines <br> Kolkata, West Bengal<br><br>
-                                    <strong>Phone:</strong> +1 5589 55488 55<br>
-                                    <strong>Email:</strong> info@example.com<br>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 footer-links">
-                            <h4>Useful Links</h4>
-                            <ul>
-                                <li><i class="bi bi-chevron-right"></i> <a href="index.html">Home</a></li>
-                                <li><i class="bi bi-chevron-right"></i> <a href="userpage.html">User</a></li>
-                                <li><i class="bi bi-chevron-right"></i> <a href="team.html">About us</a></li>
-                                <li><i class="bi bi-chevron-right"></i> <a href="faq.html">FAQ</a></li>
-                                <li><i class="bi bi-chevron-right"></i> <a href="terms.html">Terms of service</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-lg-4 col-md-6 footer-newsletter">
-                            <h4>Our Newsletter</h4>
-                            <p>Have any query?<br>Feel free to write to us</p>
-                            <form action="" method="post">
-                                <input type="email" name="email"><input type="submit" value="Send">
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-legal text-center">
-                <div
-                    class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center">
-                    <div class="d-flex flex-column align-items-center align-items-lg-start">
-                        <div class="copyright"> &copy; Copyright <strong><span>Team No Deadlines</span></strong>. All Rights
-                            Reserved </div>
-                        <div class="credits"> Designed by <a href="/team.html">Team No Deadlines</a>
-                        </div>
-                    </div>
-                    <div class="social-links order-first order-lg-last mb-3 mb-lg-0">
-                        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-                        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-                    </div>
-                </div>
-            </div>
-        </footer><!-- End Footer -->
-        <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
-                class="bi bi-arrow-up-short"></i></a>
-        <div id="preloader"></div>
-        <!-- Vendor JS Files -->
-        <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="assets/vendor/aos/aos.js"></script>
-        <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-        <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-        <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-        <script src="assets/vendor/php-email-form/validate.js"></script>
-        <!-- Main JS File -->
-        <script src="assets/js/main.js"></script>
-        <script src="assets/js/user.js"></script>
-        <script type="module" src="scripts/checkUserStatus.js"></script>
-        <script type="module" src="scripts/rtdbExtract.js"></script>
-        <script type="module" src="scripts/indexUserState.js"></script>
-        <script type="module" src="scripts/mail.js"></script>
-        <script type="module" src="scripts/check_connection.js"></script>
-        
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const loadEl = document.querySelector('#load');
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+        // // The Firebase SDK is initialized and available here!
+        //
+        // firebase.auth().onAuthStateChanged(user => { });
+        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+        // firebase.firestore().doc('/foo/bar').get().then(() => { });
+        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
+        // firebase.messaging().requestPermission().then(() => { });
+        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+        // firebase.analytics(); // call to activate
+        // firebase.analytics().logEvent('tutorial_completed');
+        // firebase.performance(); // call to activate
+        //
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
 
-        
-    </body>
-
+        try {
+          let app = firebase.app();
+          let features = [
+            'auth', 
+            'database', 
+            'firestore',
+            'functions',
+            'messaging', 
+            'storage', 
+            'analytics', 
+            'remoteConfig',
+            'performance',
+          ].filter(feature => typeof app[feature] === 'function');
+          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
+        } catch (e) {
+          console.error(e);
+          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
+        }
+      });
+    </script>
+  </body>
 </html>
