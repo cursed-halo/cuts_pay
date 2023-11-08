@@ -13,7 +13,6 @@
     "source": "functions"
   },
   "hosting": {
-    "site": "cutspay",
     "public": "public",
     "ignore": [
       "firebase.json",
