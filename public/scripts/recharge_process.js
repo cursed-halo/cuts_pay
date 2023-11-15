@@ -2,6 +2,7 @@ import {
     getAuth,
     onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-auth.js";
+var stripe = Stripe('pk_live_51O2RX5SCi3KIkJE3IcjHOBMHG0hosIEx902U1Hra5yJRexbHoGECsmJKKpXkGDtIwgAU6NvIttysvPNoVQ8ZqUKu00V1cbkS0q');
 import {
     auth
 } from "./firebase_auth.js";
@@ -95,10 +96,32 @@ async function matchOtp(email) {
   // Example usage:
              //performRecharge(user.email, );
   
-             document.cookie = ""+recharge_amt.value;
-            alert("You are verified \n Press enter to proceed to payments");
+            //  document.cookie = ""+recharge_amt.value;
+            // alert("You are verified \n Press enter to proceed to payments");
 
-            window.location.replace("Payment_self.html");
+            // window.location.replace("Payment_self.html");
+            fetch('http://localhost:4000/create-checkout-session', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ price: recharge_amt.value }), // Send the price in the request body
+              })
+              .then(response => {
+                console.log(recharge_amt.value)
+                if (!response.ok) {
+                  throw new Error('Network response was not ok');
+                }
+                return response.json();
+              })
+              .then(session => {
+                return stripe.redirectToCheckout({ sessionId: session.id });
+              })
+              .catch(error => {
+                console.error('Error:', error);
+                // Display error message to the user, or handle it as needed
+              });
+            
             console.log(successData.message);
             
         }
