@@ -30,7 +30,7 @@ async function statechange() {
 
         user.getIdToken( /* forceRefresh */ true).then(function(token){
            
-           fetch('http://https://cuts-pay-no-deadlines.herokuapp.com/users/' + uid, {
+           fetch('https://cuts-pay-no-deadlines.herokuapp.com/users/' + uid, {
         
           method: 'GET',
           headers: {
