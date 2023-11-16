@@ -63,7 +63,7 @@ async function matchOtp(email) {
 
     var otp = document.getElementById("text1").value + document.getElementById("text2").value + document.getElementById("text3").value + document.getElementById("text4").value
     try {
-        const response = await fetch('https://cuts-pay-no-deadlines.herokuapp.com//verify-otp', {
+        const response = await fetch('https://cuts-pay-no-deadlines.herokuapp.com/verify-otp', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
