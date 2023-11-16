@@ -127,7 +127,7 @@ async function onsubmit() {
 
         onAuthStateChanged(auth, (user) => {
             user.getIdToken( /* forceRefresh */ true).then(function (token) {
-                fetch('http://localhost:4000/saveUserData', {
+                fetch('https://cuts-pay-no-deadlines.herokuapp.com/saveUserData', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',

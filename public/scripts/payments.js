@@ -2,7 +2,7 @@
 
 function performRecharge(userId, rechargeToken) {
     // URL of the server endpoint
-    const url = 'http://localhost:4000/recharge';
+    const url = 'https://cuts-pay-no-deadlines.herokuapp.com/recharge';
     console.log("recarge token received:",rechargeToken);
     //console.log(userId);
     // Data to be sent in the request body
@@ -37,7 +37,7 @@ function performRecharge(userId, rechargeToken) {
   }
   function encryptData(userId) {
     // URL of the server endpoint
-    const url = 'http://localhost:4000/encrypt';
+    const url = 'https://cuts-pay-no-deadlines.herokuapp.com/encrypt';
   
     // Data to be sent in the request body
     //const data = { plaintext };

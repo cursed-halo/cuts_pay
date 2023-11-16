@@ -3,7 +3,7 @@
 // Function to call the encrypt endpoint and handle the response
 function encryptData(plaintext) {
     // The URL of the endpoint
-    const url = 'http://localhost:4000/encrypt';
+    const url = 'https://cuts-pay-no-deadlines.herokuapp.com/encrypt';
   
     // The data you want to send in the POST request
     const data = { plaintext };

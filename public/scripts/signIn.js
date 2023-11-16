@@ -36,7 +36,7 @@ async function signIn() {
         // const querySnapshot = await getDocs(q1);
         // console.log(querySnapshot.size);
 
-        const url = "http://localhost:4000/linkFirebaseUser";
+        const url = "https://cuts-pay-no-deadlines.herokuapp.com/linkFirebaseUser";
         onAuthStateChanged(auth, (user) => {
           if (user) {
             // User is signed in.

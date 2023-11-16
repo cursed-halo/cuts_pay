@@ -24,7 +24,7 @@ otpCard.innerHTML = null;
 otpCard
 var res;
 var resultOtp;
-const baseUrl = "http://localhost:5500/hello"
+const baseUrl = "https://cuts-pay-no-deadlines.herokuapp.com/hello"
 var recharge_amt = document.getElementById("recharge_amount");
 const recharge_field = document.getElementById("recharge_amount");
 recharge_field.addEventListener('keyup', recharge_amt_checker);
@@ -63,7 +63,7 @@ async function matchOtp(email) {
 
     var otp = document.getElementById("text1").value + document.getElementById("text2").value + document.getElementById("text3").value + document.getElementById("text4").value
     try {
-        const response = await fetch('http://localhost:4000/verify-otp', {
+        const response = await fetch('https://cuts-pay-no-deadlines.herokuapp.com//verify-otp', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -100,7 +100,7 @@ async function matchOtp(email) {
             // alert("You are verified \n Press enter to proceed to payments");
 
             // window.location.replace("Payment_self.html");
-            fetch('http://localhost:4000/create-checkout-session', {
+            fetch('https://cuts-pay-no-deadlines.herokuapp.com/create-checkout-session', {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json',
@@ -162,7 +162,7 @@ async function matchOtp(email) {
 
 async function otpGenerator(mailId) {
     try {
-        const response = await fetch(`http://localhost:4000/hello?mail=${mailId}`);
+        const response = await fetch(`https://cuts-pay-no-deadlines.herokuapp.com/hello?mail=${mailId}`);
         const data = await response.json();
         console.log(data);
         if (data.status === "success") {
