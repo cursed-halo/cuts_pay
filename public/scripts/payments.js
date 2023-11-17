@@ -81,3 +81,5 @@ function performRecharge(userId, rechargeToken) {
     
     
   }
+
+  displayToken()
