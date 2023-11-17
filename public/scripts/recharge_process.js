@@ -96,10 +96,13 @@ async function matchOtp(email) {
   // Example usage:
              //performRecharge(user.email, );
   
-            //  document.cookie = ""+recharge_amt.value;
+              document.cookie = ""+recharge_amt.value;
             // alert("You are verified \n Press enter to proceed to payments");
 
             // window.location.replace("Payment_self.html");
+            
+            //uncomment
+            //window.location.replace("payment_success.html")
             fetch('https://cuts-pay-no-deadlines.herokuapp.com/create-checkout-session', {
                 method: 'POST',
                 headers: {

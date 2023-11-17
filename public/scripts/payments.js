@@ -73,7 +73,7 @@ function performRecharge(userId, rechargeToken) {
       // Handle any errors here
     });
   }
-  document.getElementById("pay_btn").addEventListener("click",displayToken);
+  //document.getElementById("pay_btn").addEventListener("click",displayToken);
    function displayToken()
   {
     var userId=localStorage.getItem("user");
