@@ -49,7 +49,7 @@ import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/
 
 
 
-const url="http://https://cuts-pay-no-deadlines.herokuapp.com/linkFirebaseUser";
+const url="https://cuts-pay-no-deadlines.herokuapp.com/linkFirebaseUser";
 onAuthStateChanged(auth,(user)=>{
   if (user) {
     // User is signed in.
