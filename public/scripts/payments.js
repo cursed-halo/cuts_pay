@@ -1,3 +1,14 @@
+const urlParams = new URLSearchParams(window.location.search);
+const sessionId = urlParams.get('session_id');
+var rechargeAmt=0;
+fetch(`/retrieve-session?session_id=${sessionId}`)
+  .then(response => response.json())
+  .then(data => {
+    console.log("Transaction amount:", data.amount);
+    rechargeAmt=data.amount
+    // Display or use the transaction amount in your page
+  })
+  .catch(error => console.error("Error fetching session details:", error));
 
 
 function performRecharge(userId, rechargeToken) {
@@ -41,7 +52,7 @@ function performRecharge(userId, rechargeToken) {
   
     // Data to be sent in the request body
     //const data = { plaintext };
-    var rechargeAmt=document.cookie;
+   // var rechargeAmt=document.cookie;
 
   
     // Use the fetch API to post the data to the server
