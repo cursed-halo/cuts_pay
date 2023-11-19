@@ -63,11 +63,12 @@ import {
 // }
 
 
-
+var signedUser=null;
 const url = "https://cuts-pay-no-deadlines.herokuapp.com/linkFirebaseUser";
 onAuthStateChanged(auth, (user) => {
   if (user) {
-    // User is signed in.
+    // User is signed in
+    signedUser=user;
     user.getIdToken( /* forceRefresh */ true).then(function (token) {
       // Send token to your backend via HTTPS
       fetch(url, {
@@ -87,8 +88,8 @@ onAuthStateChanged(auth, (user) => {
     window.location.replace("/signin.html");
   }
 });
-
-fetch('https://cuts-pay-no-deadlines.herokuapp.com/fetch-transactions')
+const userid=signedUser.email;
+fetch('https://cuts-pay-no-deadlines.herokuapp.com/fetch-transactions/${userid}')
   .then(response => {
     if (!response.ok) {
       throw new Error('Network response was not ok ' + response.statusText);
