@@ -88,7 +88,7 @@ onAuthStateChanged(auth, (user) => {
   }
 });
 
-fetch('/linkFirebaseUser')
+fetch('https://cuts-pay-no-deadlines.herokuapp.com/fetch-transactions')
   .then(response => {
     if (!response.ok) {
       throw new Error('Network response was not ok ' + response.statusText);
