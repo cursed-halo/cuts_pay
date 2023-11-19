@@ -68,7 +68,7 @@ const url = "https://cuts-pay-no-deadlines.herokuapp.com/linkFirebaseUser";
 onAuthStateChanged(auth, (user) => {
   if (user) {
     // User is signed in
-    signedUser=user.email;
+    userId=user.email;
     user.getIdToken( /* forceRefresh */ true).then(function (token) {
       // Send token to your backend via HTTPS
       fetch(url, {
