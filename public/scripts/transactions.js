@@ -63,12 +63,12 @@ import {
 // }
 
 
-var signedUser=null;
+var userId=null;
 const url = "https://cuts-pay-no-deadlines.herokuapp.com/linkFirebaseUser";
 onAuthStateChanged(auth, (user) => {
   if (user) {
     // User is signed in
-    signedUser=user;
+    signedUser=user.email;
     user.getIdToken( /* forceRefresh */ true).then(function (token) {
       // Send token to your backend via HTTPS
       fetch(url, {
@@ -78,7 +78,22 @@ onAuthStateChanged(auth, (user) => {
           },
         })
         .then(response => response.json())
-        .then(data => console.log(data))
+        .then(data =>{ console.log(data)
+          fetch('https://cuts-pay-no-deadlines.herokuapp.com/fetch-transactions/${userid}')
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.json();
+          })
+          .then(data => {
+            console.log(data);
+            //document.getElementById('dataDisplay').textContent = JSON.stringify(data);
+          })
+          .catch(error => {
+            console.error('There has been a problem with your fetch operation:', error);
+          });
+        })
         .catch(error => console.error('Error:', error));
     }).catch(function (error) {
       console.error('Error getting token:', error);
@@ -88,18 +103,4 @@ onAuthStateChanged(auth, (user) => {
     window.location.replace("/signin.html");
   }
 });
-const userid=signedUser.email;
-fetch('https://cuts-pay-no-deadlines.herokuapp.com/fetch-transactions/${userid}')
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Network response was not ok ' + response.statusText);
-    }
-    return response.json();
-  })
-  .then(data => {
-    console.log(data);
-    //document.getElementById('dataDisplay').textContent = JSON.stringify(data);
-  })
-  .catch(error => {
-    console.error('There has been a problem with your fetch operation:', error);
-  });
+
