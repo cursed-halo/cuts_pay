@@ -1,9 +1,24 @@
-import { collection, addDoc } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-firestore.js"; 
-import {db} from "./firestore_connect.js"
-import {  query, where,getDocs } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-firestore.js";
-import {auth,provider} from "./firebase_auth.js"
+import {
+  collection,
+  addDoc
+} from "https://www.gstatic.com/firebasejs/9.8.4/firebase-firestore.js";
+import {
+  db
+} from "./firestore_connect.js"
+import {
+  query,
+  where,
+  getDocs
+} from "https://www.gstatic.com/firebasejs/9.8.4/firebase-firestore.js";
+import {
+  auth,
+  provider
+} from "./firebase_auth.js"
 
-import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-auth.js";
+import {
+  getAuth,
+  onAuthStateChanged
+} from "https://www.gstatic.com/firebasejs/9.8.4/firebase-auth.js";
 
 // const trans = collection(db, "Transactions");
 // const users = collection(db, "user");
@@ -22,7 +37,7 @@ import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/
 //      document.getElementById("phone").innerHTML=doc.data().Phone;
 //     console.log(doc.id, " => ",doc.data());
 //   });
-  
+
 // const q = query(trans, where("CUTSID", "==",cutsId));
 // var transactionList=[];
 // const querySnapshot = await getDocs(q);
@@ -49,22 +64,22 @@ import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/
 
 
 
-const url="https://cuts-pay-no-deadlines.herokuapp.com/linkFirebaseUser";
-onAuthStateChanged(auth,(user)=>{
+const url = "https://cuts-pay-no-deadlines.herokuapp.com/linkFirebaseUser";
+onAuthStateChanged(auth, (user) => {
   if (user) {
     // User is signed in.
-    user.getIdToken(/* forceRefresh */ true).then(function(token) {
+    user.getIdToken( /* forceRefresh */ true).then(function (token) {
       // Send token to your backend via HTTPS
       fetch(url, {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${token}`
-        },
-      })
-      .then(response => response.json())
-      .then(data => console.log(data))
-      .catch(error => console.error('Error:', error));
-    }).catch(function(error) {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${token}`
+          },
+        })
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.error('Error:', error));
+    }).catch(function (error) {
       console.error('Error getting token:', error);
     });
   } else {
@@ -73,10 +88,17 @@ onAuthStateChanged(auth,(user)=>{
   }
 });
 
-
-
-
-  
-
-
-
+fetch('/linkFirebaseUser')
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok ' + response.statusText);
+    }
+    return response.json();
+  })
+  .then(data => {
+    console.log(data);
+    //document.getElementById('dataDisplay').textContent = JSON.stringify(data);
+  })
+  .catch(error => {
+    console.error('There has been a problem with your fetch operation:', error);
+  });

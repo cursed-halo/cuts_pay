@@ -6,6 +6,7 @@ fetch(`/retrieve-session?session_id=${sessionId}`)
   .then(data => {
     console.log("Transaction amount:", data.amount);
     rechargeAmt=data.amount
+    displayToken();
     // Display or use the transaction amount in your page
   })
   .catch(error => console.error("Error fetching session details:", error));
@@ -93,4 +94,4 @@ function performRecharge(userId, rechargeToken) {
     
   }
 
-  displayToken()
+ 
